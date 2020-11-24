@@ -9,6 +9,7 @@
   "author": "Tim Hoyt",
   "license": "ISC",
   "dependencies": {
+    "@hapi/hapi": "^20.0.3",
     "hapi": "^18.1.0"
   }
 }

@@ -38,13 +38,53 @@ class Zip extends Component {
             tacomaData: '',
             siteSource: [],
             siteChoice: '',
-            sortType: true,
+            yards: [],
     }
 
         
 
      baseUrl = "https://rapidapi.p.rapidapi.com/rest/distance.json"
-    
+
+    getData = async (path) => {
+        const url = `http://localhost:3001${path}`
+        const response = await fetch(url)
+        const data = await response.json() 
+        return data
+    }
+
+    getMoreData = async () => {
+        const threeUrl = "http://localhost:3001/yards"
+        const response = await fetch(threeUrl)
+        const moreData = await response.json()
+        return moreData
+    }
+
+    async componentDidMount() {
+        const yardsResponse = await this.getData("/yards") 
+        const moreData = await this.getMoreData() 
+        console.log("Server Data", yardsResponse)
+        this.setState({ yards: yardsResponse.yards })
+    }
+
+    // async postData(path, data) {
+    //     const url = `http://localhost:3001${path}`
+    //     const response = await fetch(url, {
+    //         method: 'POST',
+    //         mode: 'CORS',
+    //         body: JSON.stringify(data),
+    //         headers: {
+    //             'Content-Type' : 'application/json'
+    //         }
+    //     })
+    //     console.log(response)
+    //     return response
+    // }
+
+    // postHandler = async () => {
+    //     await this.postData("/yards", this.saltLakeData)
+    // }
+  
+
     constructor() {
         super();
         this.onChangeHandler = this.onChangeHandler.bind(this)
@@ -90,14 +130,14 @@ class Zip extends Component {
 
     saltLakeZip = async () => {
         let url = this.baseUrl + `/${this.state.fromZipCode}` + `/${this.state.toZipCodeSaltLake}`+ '/mile'
-        let data = await axios.get(url, {
+        let slcData = await axios.get(url, {
             headers: {
                 "x-rapidapi-key" : "90f2b5d08dmshd8dd492b31878ebp1e8a85jsncc52ec040754",
                 "x-rapidapi-host" : "redline-redline-zipcode.p.rapidapi.com",
                 "useQueryString" : true
         }})
-        .then(({ data }) => data)
-        this.setState({ saltLakeData: data.distance })
+        .then(({ slcData }) => slcData)
+        this.setState({ saltLakeData: slcData.distance })
     }
 
     stockZip = async () => {
@@ -257,14 +297,6 @@ class Zip extends Component {
         .then(({ data }) => data)
         this.setState({ tacomaData: data.distance})
     }
-    
-    getSaltLake = async () => {
-        let url = 'http://localhost:3000/yards'
-        let data = await axios.get(url)
-        .then(({ data }) => data)
-        console.log(data)
-        // this.setState({ tacomaData: data.distance})
-    }
  
 
     render () {
@@ -347,12 +379,14 @@ class Zip extends Component {
             const sortTest =  this.state.siteSource.sort((a,b) => a - b)      
 
 
-        console.log("SITE SOURCE", this.state.siteSource, "SITE TEST", min, "SITE CHOICE", this.state.siteChoice, "SORT PLEASE", sortTest, "LOCAL API", this.getSaltLake())
-
         return (
             <div className={zipContainerClass}>
                 <input type="text" maxlength="5" placeholder="zipcode" onChange={this.onChangeHandler}/>
                 <div onClick={this.handleSubmitClick}> submit </div>
+                <input id="" type="text" ></input>
+                <div>{this.state.yards}</div>
+                {/* <h2>{this.state.messageTwo}</h2>
+                <h2>{this.state.messageThree}</h2>  */}
                 <h2>Salt Lake: {this.state.saltLakeData}</h2>
                 <h2>Stockton: {this.state.stocktonData}</h2>
                 <h2>Mira Loma: {this.state.miraData}</h2>
