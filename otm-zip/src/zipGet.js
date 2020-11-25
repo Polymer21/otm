@@ -38,51 +38,11 @@ class Zip extends Component {
             tacomaData: '',
             siteSource: [],
             siteChoice: '',
-            yards: [],
     }
 
         
 
      baseUrl = "https://rapidapi.p.rapidapi.com/rest/distance.json"
-
-    getData = async (path) => {
-        const url = `http://localhost:3001${path}`
-        const response = await fetch(url)
-        const data = await response.json() 
-        return data
-    }
-
-    getMoreData = async () => {
-        const threeUrl = "http://localhost:3001/yards"
-        const response = await fetch(threeUrl)
-        const moreData = await response.json()
-        return moreData
-    }
-
-    async componentDidMount() {
-        const yardsResponse = await this.getData("/yards") 
-        const moreData = await this.getMoreData() 
-        console.log("Server Data", yardsResponse)
-        this.setState({ yards: yardsResponse.yards })
-    }
-
-    // async postData(path, data) {
-    //     const url = `http://localhost:3001${path}`
-    //     const response = await fetch(url, {
-    //         method: 'POST',
-    //         mode: 'CORS',
-    //         body: JSON.stringify(data),
-    //         headers: {
-    //             'Content-Type' : 'application/json'
-    //         }
-    //     })
-    //     console.log(response)
-    //     return response
-    // }
-
-    // postHandler = async () => {
-    //     await this.postData("/yards", this.saltLakeData)
-    // }
   
 
     constructor() {
@@ -116,10 +76,10 @@ class Zip extends Component {
                 this.penZip()
                 this.eagleZip()
                 this.tacoZip()
-                this.getSaltLake()
+                // this.getSaltLake()
                 // this.sort()
             })
-        console.log(this.state.fromZipCode, "SubmittedZipcode", "ZIPCODE DATA", this.state.zipData)
+        console.log()
     }
 
     handleSortClick = () => {
@@ -130,14 +90,14 @@ class Zip extends Component {
 
     saltLakeZip = async () => {
         let url = this.baseUrl + `/${this.state.fromZipCode}` + `/${this.state.toZipCodeSaltLake}`+ '/mile'
-        let slcData = await axios.get(url, {
+        let data = await axios.get(url, {
             headers: {
                 "x-rapidapi-key" : "90f2b5d08dmshd8dd492b31878ebp1e8a85jsncc52ec040754",
                 "x-rapidapi-host" : "redline-redline-zipcode.p.rapidapi.com",
                 "useQueryString" : true
         }})
-        .then(({ slcData }) => slcData)
-        this.setState({ saltLakeData: slcData.distance })
+        .then(({ data }) => data)
+        this.setState({ saltLakeData: data.distance })
     }
 
     stockZip = async () => {

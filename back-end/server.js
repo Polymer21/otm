@@ -1,26 +1,28 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const Monk = require('monk');
 
 
 const server = Hapi.server({
         port: 3001,
         host: 'localhost'
-});
+})
 
+const getYardsCollection = async () => {
+    const connectionString = "mongodb+srv://tim:test123@yardsdatabase.dukkb.mongodb.net/yardsDatabase?retryWrites=true&w=majority"
+    const db = Monk(connectionString)
+    const yards = await db.get('yards')
+    return yards
+}
 
-
-server.route({
+server.route({ 
     method: 'GET',
     path: '/yards',
-    handler: (request, h) => {
-        return { yards: [{
-            siteID: '0070',
-            inventory: {
-                numberOne: "1000"
-            },
-            distance: ''
-        }]}
+    handler: async (request, h) => {
+        const yards = await getYardsCollection()
+        const yardObjects = await yards.find()
+        return { yards: yardObjects ? yardObjects : [] }
     },
     config: {
         cors: {
@@ -33,8 +35,9 @@ server.route({
 server.route({
     method: 'POST',
     path: '/yards',
-    handler: (request, h) => {
-        console.log(request.payload)
+    handler: async (request, h) => {
+        const yards = await getYardsCollection() 
+        yards.insert(request.payload)
         return h.response('success') 
     },
     config: {
@@ -44,22 +47,6 @@ server.route({
         }
     }
 })
-
-server.route({
-    method: 'POST',
-    path: '/',
-    handler: (request, h) => {
-        console.log(request.payload)
-        return h.response('success') 
-    },
-    config: {
-        cors: {
-            origin: ['*'],
-            additionalHeaders: ['cache-control', 'x-requested-with']
-        }
-    }
-})
-
 
 // start the server
 async function start() {
