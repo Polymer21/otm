@@ -3,7 +3,6 @@
 const Hapi = require('@hapi/hapi');
 const Monk = require('monk');
 
-
 const server = Hapi.server({
         port: 3001,
         host: 'localhost'
@@ -47,6 +46,23 @@ server.route({
         }
     }
 })
+
+
+// server.route({ 
+//     method: 'PUT',
+//     path: "/yards/{id}",
+//     handler: async (request, h) => {
+//         const yards = await getYardsCollection()
+//         const yardObjects = await yards.findById(request.params.id).exec()
+//         return { yards: yardObjects ? yardObjects : [] }
+//     },
+//     config: {
+//         cors: {
+//             origin: ['*'],
+//             additionalHeaders: ['cache-control', 'x-requested-with']
+//         }
+//     }
+// })
 
 // start the server
 async function start() {

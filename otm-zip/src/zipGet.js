@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import './zip-get.css'
+import Home from './home'
 
 
 class Zip extends Component {
@@ -38,6 +39,8 @@ class Zip extends Component {
             tacomaData: '',
             siteSource: [],
             siteChoice: '',
+            yards: [],
+            yardDistance : "500",
     }
 
         
@@ -76,6 +79,7 @@ class Zip extends Component {
                 this.penZip()
                 this.eagleZip()
                 this.tacoZip()
+                // this.test()
                 // this.getSaltLake()
                 // this.sort()
             })
@@ -257,9 +261,11 @@ class Zip extends Component {
         .then(({ data }) => data)
         this.setState({ tacomaData: data.distance})
     }
- 
+
 
     render () {
+
+       
 
         let saltLakeDistance = this.state.saltLakeData
         let stocktonDistance = this.state.stocktonData
@@ -339,7 +345,18 @@ class Zip extends Component {
             const sortTest =  this.state.siteSource.sort((a,b) => a - b)      
 
 
+            // const siteMap = (props) => {
+            //     return (
+            //         <p> show = props.{this.state.siteSource} </p>
+            //     )
+            // }
+
+            
+            
+
+
         return (
+
             <div className={zipContainerClass}>
                 <input type="text" maxlength="5" placeholder="zipcode" onChange={this.onChangeHandler}/>
                 <div onClick={this.handleSubmitClick}> submit </div>
@@ -363,6 +380,7 @@ class Zip extends Component {
                 <h2>Tacoma: {this.state.tacomaData}</h2>
                 <h2>Choice: {this.state.siteChoice}</h2>
             </div>
+            
         )
     }
 }
