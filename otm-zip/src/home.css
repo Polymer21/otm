@@ -1,5 +1,24 @@
 
 
+.home-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "top-left-1 top-mid-1 top-right-1"
+    "top-left-2 top-mid-2 top-right-2"
+    "mid-left-1 mid-mid-1 mid-right-1"
+    "mid-left-2 mid-mid-2 mid-right-2"
+    "bottom-left-1 bottom-mid-1 bottom-right-1"
+    "bottom-left-2 bottom-mid-2 bottom-right-2";
+
+    height: 150vh;
+}
+
+.display-order {
+    grid-area: top-left-2;
+}
+
 .site-container {
     display: grid;
     height: 30vh;
@@ -24,6 +43,88 @@
 
 }
 
+.saltlake-container {
+    display: grid;
+    grid-area: top-left-1;
+    height: 50vh;
+    width: 35vh;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "sl site sr"
+    "dl distance dr"
+    "inv-track-hun inv-track-fif inv-washers-one"
+    "inv-washers-eighth inv-gauge inv-gauge-a";
+
+    border-style: solid;
+    border-width: .33vh;
+    border-radius: 2vh;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+
+}
+
+.kansas-container {
+    display: grid;
+    grid-area: top-mid-1;
+    height: 50vh;
+    width: 35vh;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "sl site sr "
+    "dl distance dr "
+    "inv-track-hun inv-track-fif inv-washers-one"
+    "inv-washers-eighth inv-gauge inv-gauge-a";
+
+    border-style: solid;
+    border-width: .33vh;
+    border-radius: 2vh;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+
+}
+
+.gary-container {
+    display: grid;
+    grid-area: top-right-1;
+    height: 50vh;
+    width: 35vh;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "sl site sr "
+    "dl distance dr "
+    "inv-track-hun inv-track-fif inv-washers-one"
+    "inv-washers-eighth inv-gauge inv-gauge-a";
+
+    border-style: solid;
+    border-width: .33vh;
+    border-radius: 2vh;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+
+}
+
+.zip-container {
+    grid-area: top-mid-2;
+}
+
 .site {
     grid-area: site;
     align-self: center;
@@ -38,22 +139,43 @@
     text-align: center;
 }
 
-.inv-track { 
-    grid-area: inv-track;
+.inv-track-hun { 
+    grid-area: inv-track-hun;
     align-self: center;
     justify-self: center;
     text-align: center;
 }
 
-.inv-bolts { 
-    grid-area: inv-bolts;
+.inv-track-fif { 
+    grid-area: inv-track-fif;
     align-self: center;
     justify-self: center;
     text-align: center;
 }
 
-.inv-washers {
-    grid-area: inv-washers;
+.inv-washers-one {
+    grid-area: inv-washers-one;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.inv-washers-eighth {
+    grid-area: inv-washers-eighth;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.inv-gauge {
+    grid-area: inv-gauge;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.inv-gauge-a {
+    grid-area: inv-gauge-a;
     align-self: center;
     justify-self: center;
     text-align: center;

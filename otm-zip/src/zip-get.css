@@ -1,3 +1,138 @@
 .zip-container {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "input submit send blank-one"
+    "saltlake kansas stockton mira"
+    "phoenix tacoma eagle new"
+    "ala pen gary hamden"
+    "toledo granite choice choice";
+
+    height: 40vh;
+    width: 60vh;
+}
+
+.zip-input {
+    grid-area: input;
+
+    height: 2vh;
+    width: 8vh;
+
+    align-self: center;
+    justify-self: center;
+}
+.submit-zip {
+    grid-area: submit;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 1vh;
+
+    height: 4vh;
+    width: 8vh;
+    align-self: center;
+    justify-self: start;
+}
+
+.send-data {
+    grid-area: send;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 1vh;
+
+    height: 4vh;
+    width: 8vh;
+    align-self: center;
+    justify-self: start;
+}
+
+.saltlake-distance {
+    grid-area: saltlake;
+    align-self: center;
+    justify-self: center;
+}
+
+.granite-distance {
+    grid-area: granite;
+    align-self: center;
+    justify-self: center;
+}
+
+.kansas-distance {
+    grid-area: kansas;
+    align-self: center;
+    justify-self: center;
+}
+
+.stockton-distance {
+    grid-area: stockton;
+    align-self: center;
+    justify-self: center;
+}
+
+.mira-distance {
+    grid-area: mira;
+    align-self: center;
+    justify-self: center;
+}
+
+.phoenix-distance {
+    grid-area: phoenix;
+    align-self: center;
+    justify-self: center;
+}
+
+.tacoma-distance {
+    grid-area: tacoma;
+    align-self: center;
+    justify-self: center;
+}
+
+.eagle-distance {
+    grid-area: eagle;
+    align-self: center;
+    justify-self: center;
+}
+
+.new-distance {
+    grid-area: new;
+    align-self: center;
+    justify-self: center;
+}
+
+.ala-distance {
+    grid-area: ala;
+    align-self: center;
+    justify-self: center;
+}
+
+.pen-distance {
+    grid-area: pen;
+    align-self: center;
+    justify-self: center;
+}
+
+.gary-distance {
+    grid-area: gary;
+    align-self: center;
+    justify-self: center;
+}
+
+.hamden-distance {
+    grid-area: hamden;
+    align-self: center;
+    justify-self: center;
+}
+
+.toledo-distance {
+    grid-area: toledo;
+    align-self: center;
+    justify-self: center;
+}
+
+.choice-container {
+    grid-area: choice;
+    align-self: center;
+    justify-self: center;
 }

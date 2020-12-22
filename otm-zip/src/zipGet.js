@@ -5,6 +5,7 @@ import Home from './home'
 
 
 class Zip extends Component {
+
     state = {
             zipCodeInput: '',
             fromZipCode: '',
@@ -39,8 +40,7 @@ class Zip extends Component {
             tacomaData: '',
             siteSource: [],
             siteChoice: '',
-            yards: [],
-            yardDistance : "500",
+            siteMap:[],
     }
 
         
@@ -79,12 +79,12 @@ class Zip extends Component {
                 this.penZip()
                 this.eagleZip()
                 this.tacoZip()
-                // this.test()
                 // this.getSaltLake()
                 // this.sort()
             })
         console.log()
     }
+
 
     handleSortClick = () => {
         this.sort()
@@ -262,6 +262,9 @@ class Zip extends Component {
         this.setState({ tacomaData: data.distance})
     }
 
+    sendData = () => {
+        this.props.siteCallBack(this.state.siteMap)
+    }
 
     render () {
 
@@ -294,6 +297,7 @@ class Zip extends Component {
             phoenixDistance,
             hamdenDistance,
             graniteDistance,
+            garyDistance,
             kansasDistance,
             newDistance,
             toledoDistance,
@@ -351,34 +355,47 @@ class Zip extends Component {
             //     )
             // }
 
+            this.state.siteMap = [
+                    { miraDistance,
+                    stocktonDistance,
+                    saltLakeDistance,
+                    alaDistance,
+                    phoenixDistance,
+                    hamdenDistance,
+                    graniteDistance,
+                    garyDistance,
+                    kansasDistance,
+                    newDistance,
+                    toledoDistance,
+                    penDistance,
+                    eagleDistance,
+                    tacoDistance,}
+            ]
             
-            
-
-
+                console.log(this.state.siteSource, "Order")
         return (
 
             <div className={zipContainerClass}>
-                <input type="text" maxlength="5" placeholder="zipcode" onChange={this.onChangeHandler}/>
-                <div onClick={this.handleSubmitClick}> submit </div>
-                <input id="" type="text" ></input>
-                <div>{this.state.yards}</div>
-                {/* <h2>{this.state.messageTwo}</h2>
-                <h2>{this.state.messageThree}</h2>  */}
-                <h2>Salt Lake: {this.state.saltLakeData}</h2>
-                <h2>Stockton: {this.state.stocktonData}</h2>
-                <h2>Mira Loma: {this.state.miraData}</h2>
-                <h2>Dolomite: {this.state.alaData}</h2>
-                <h2>Phoenix: {this.state.phoenixData}</h2>
-                <h2>Hamden: {this.state.hamdenData}</h2>
-                <h2>Granite: {this.state.graniteData}</h2>
-                <h2>Gary: {this.state.garyData}</h2>
-                <h2>Kansas City: {this.state.kansasData}</h2>
-                <h2>New Orleans: {this.state.newData}</h2>
-                <h2>Toledo: {this.state.toledoData}</h2>
-                <h2>McMurray: {this.state.penData}</h2>
-                <h2>Eagle Lake: {this.state.eagleData}</h2>
-                <h2>Tacoma: {this.state.tacomaData}</h2>
-                <h2>Choice: {this.state.siteChoice}</h2>
+                <input className="zip-input" type="text" maxlength="5" placeholder="zipcode" onChange={this.onChangeHandler}/>
+                <button className="submit-zip" onClick={this.handleSubmitClick}> submit </button>
+                <div className="saltlake-distance">Salt Lake: {this.state.saltLakeData}</div>
+                <div className="stockton-distance">Stockton: {this.state.stocktonData}</div>
+                <div className="mira-distance">Mira Loma: {this.state.miraData}</div>
+                <div className="ala-distance">Dolomite: {this.state.alaData}</div>
+                <div className="phoenix-distance">Phoenix: {this.state.phoenixData}</div>
+                <div className="hamden-distance">Hamden: {this.state.hamdenData}</div>
+                <div className="granite-distance">Granite: {this.state.graniteData}</div>
+                <div className="gary-distance">Gary:{this.state.garyData}</div>
+                <div className="kansas-distance">Kansas City: {this.state.kansasData}</div>
+                <div className="new-distance">New Orleans: {this.state.newData}</div>
+                <div className="toledo-distance">Toledo: {this.state.toledoData}</div>
+                <div className="pen-distance">McMurray: {this.state.penData}</div>
+                <div className="eagle-distance">Eagle Lake: {this.state.eagleData}</div>
+                <div className="tacoma-distance">Tacoma: {this.state.tacomaData}</div>
+                <div className="choice-container">Choice: {this.state.siteChoice}</div>
+                <button className="send-data" onClick={this.sendData}>Send</button>
+                <div>
+                </div>
             </div>
             
         )
