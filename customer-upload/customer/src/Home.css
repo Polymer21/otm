@@ -1,0 +1,116 @@
+.customer-home-container {
+  display: grid;
+  grid-area: Home;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "cus-in top-row top-row"
+  "cus-in mid-row mid-row"
+  "bottom-row bottom-row bottom-row";
+
+  height: 100%;
+  width: 100%;
+
+  background-color: #B0C5D0;
+  
+}
+
+.customer-info-container {
+  display: grid;
+  grid-area: cus-in;
+  grid-template-rows: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "top-left input-area input-area top-row"
+  "sec-left input-area input-area sec-right";
+
+  background-color: #5F86A3;
+
+
+}
+
+.customer-input-container {
+  display: grid;
+  grid-area: input-area;
+  grid-template-rows: 1fr .75fr .75fr .5fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  
+  "title title"
+  "first-name last-name"
+  "birthday  age"
+  "blank blank"
+  "something something"
+  "sec-row sec-row";
+
+  
+
+}
+
+.customer-input-title {
+  grid-area: title;
+  align-self: end;
+  
+}
+
+.customer-input-title-words {
+  font-size: 2vh;
+  grid-area: title;
+  align-self: end;
+  color: #a4b2a9;
+}
+
+.first-name-input {
+  grid-area: first-name;
+  height: 3vh;
+  width: 20vh;
+
+  border-style: solid;
+  border-color: white;
+  border-radius: 1vh;
+
+  align-self: start;
+  justify-self: center;
+  margin: 1vh;
+  color: #a4b2a9;
+}
+
+.last-name-input {
+  grid-area: last-name;
+  height: 3vh;
+  width: 20vh;
+
+  border-style: solid;
+  border-radius: 1vh;
+  align-self: start;
+  border-color: white;
+  justify-self: center;
+  margin: 1vh;
+}
+
+.birthday-input {
+  grid-area: first-name;
+  height: 3vh;
+  width: 20vh;
+
+
+  border-style: solid;
+  border-color: white;
+  border-radius: 1vh;
+  align-self: end;
+  justify-self: center;
+  margin-top: 2vh;
+}
+
+.age-input {
+  grid-area: last-name;
+  height: 3vh;
+  width: 20vh;
+  
+  border-style: solid;
+  border-color: white;
+  border-radius: 1vh;
+  align-self: end;
+  justify-self: center;
+  margin-top: 2vh;
+}
