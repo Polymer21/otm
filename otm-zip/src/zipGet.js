@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import './zip-get.css'
-import Home from './home'
+import ServerData from './serverData'
 
 
 class Zip extends Component {
@@ -313,8 +313,6 @@ class Zip extends Component {
                 min = this.state.siteSource[i]
                 console.log("setting Min", min)
             } 
-        
-            
 
             if(miraDistance === min) {
                 this.state.siteChoice = 'MIRA'
@@ -396,6 +394,10 @@ class Zip extends Component {
                 <button className="send-data" onClick={this.sendData}>Send</button>
                 <div>
                 </div>
+
+                {/* <div className="order-container">
+                    { this.state.siteSource[0] }
+                </div> */}
             </div>
             
         )

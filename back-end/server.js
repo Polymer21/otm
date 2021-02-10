@@ -15,6 +15,7 @@ const getYardsCollection = async () => {
     return yards
 }
 
+
 // server.route({ 
 //     method: 'GET',
 //     path: '/yards',

@@ -10,7 +10,7 @@
     "ala pen gary hamden"
     "toledo granite choice choice";
 
-    height: 40vh;
+    height: 80vh;
     width: 60vh;
 }
 
@@ -22,6 +22,11 @@
 
     align-self: center;
     justify-self: center;
+
+    border-radius: 1vh;
+
+    border-style: none;
+
 }
 .submit-zip {
     grid-area: submit;

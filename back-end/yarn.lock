@@ -324,6 +324,11 @@ bl@^2.2.1:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
+bluebird@^2.3.6:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
+  integrity sha1-U0uQM8AiyVecVro7Plpcqvu2UOE=
+
 boom@7.x.x:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/boom/-/boom-7.3.0.tgz#733a6d956d33b0b1999da3fe6c12996950d017b9"
@@ -348,6 +353,16 @@ bson@^1.1.4:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/bson/-/bson-1.1.5.tgz#2aaae98fcdf6750c0848b0cba1ddec3c73060a34"
   integrity sha512-kDuEzldR21lHciPQAIulLs1LZlCXdLziXI6Mb/TDkwXhb//UORJNPXgcRs2CuO4H0DcMkpfT3/ySsP3unoZjBg==
+
+bson@~1.0.4:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.9.tgz#12319f8323b1254739b7c6bef8d3e89ae05a2f57"
+  integrity sha512-IQX9/h7WdMBIW/q/++tGd+emQr0XMdeZ6icnT/74Xk9fnabWn+gZgpE+9V+gujL3hhJOoNrnDVY7tWdzc7NUTg==
+
+buffer-shims@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/buffer-shims/-/buffer-shims-1.0.0.tgz#9978ce317388c649ad8793028c3477ef044a8b51"
+  integrity sha1-mXjOMXOIxkmth5MCjDR37wRKi1E=
 
 call@5.x.x:
   version "5.0.3"
@@ -380,6 +395,14 @@ combined-stream@~0.0.4:
   integrity sha1-ATfmV7qlp1QcV6w3rF/AfXO03B8=
   dependencies:
     delayed-stream "0.0.5"
+
+connect2mongo@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/connect2mongo/-/connect2mongo-0.0.1.tgz#ca3b9d358b908d4e494bdec06cd7ba095bb8449e"
+  integrity sha1-yjudNYuQjU5JS97AbNe6CVu4RJ4=
+  dependencies:
+    bluebird "^2.3.6"
+    mongodb "^2.0.4"
 
 content@4.x.x:
   version "4.0.6"
@@ -417,6 +440,11 @@ denque@^1.4.1:
   resolved "https://registry.yarnpkg.com/denque/-/denque-1.4.1.tgz#6744ff7641c148c3f8a69c307e51235c1f4a37cf"
   integrity sha512-OfzPuSZKGcgr96rf1oODnfjqBFmr1DVoc/TrItj3Ohe0Ah1C5WX5Baquw/9U9KovnQ88EqmJbD66rKYUQYN1tQ==
 
+es6-promise@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
+  integrity sha1-7FYjOGgDKQkgcXDDlEjiREndH8Q=
+
 form-data@~0.0.3:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-0.0.10.tgz#db345a5378d86aeeb1ed5d553b869ac192d2f5ed"
@@ -425,6 +453,11 @@ form-data@~0.0.3:
     async "~0.2.7"
     combined-stream "~0.0.4"
     mime "~1.2.2"
+
+gnu-argv@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/gnu-argv/-/gnu-argv-0.5.0.tgz#1cf321d01f384d95b874551a6ecc221ef89ff4db"
+  integrity sha1-HPMh0B84TZW4dFUabswiHvif9Ns=
 
 hapi@^18.1.0:
   version "18.1.0"
@@ -464,7 +497,7 @@ hoek@6.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-6.1.3.tgz#73b7d33952e01fe27a38b0457294b79dd8da242c"
   integrity sha512-YXXAAhmF9zpQbC7LEcREFtXfGq5K1fmd+4PHkBq8NUqmzW3G+Dq10bI/i0KucLRwss3YYFQ0fSfoxBZYiGUqtQ==
 
-inherits@~2.0.3:
+inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -541,6 +574,23 @@ mongo@^0.1.0:
   dependencies:
     mongodb "*"
 
+mongocli@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/mongocli/-/mongocli-0.0.1.tgz#91f524cd53fb50adcfd34ac03655aed8140c55a9"
+  integrity sha1-kfUkzVP7UK3P00rANlWu2BQMVak=
+  dependencies:
+    connect2mongo "0.0.1"
+    gnu-argv "^0.5.0"
+    underscore "^1.7.0"
+
+mongodb-core@2.1.20:
+  version "2.1.20"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.20.tgz#fece8dd76b59ee7d7f2d313b65322c160492d8f1"
+  integrity sha512-IN57CX5/Q1bhDq6ShAR6gIv4koFsZP7L8WOK1S0lR0pVDQaScffSMV5jxubLsmZ7J+UdqmykKw4r9hG3XQEGgQ==
+  dependencies:
+    bson "~1.0.4"
+    require_optional "~1.0.0"
+
 mongodb@*, mongodb@^3.2.3:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.6.3.tgz#eddaed0cc3598474d7a15f0f2a5b04848489fd05"
@@ -553,6 +603,15 @@ mongodb@*, mongodb@^3.2.3:
     safe-buffer "^5.1.2"
   optionalDependencies:
     saslprep "^1.0.0"
+
+mongodb@^2.0.4:
+  version "2.2.36"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.36.tgz#1c573680b2849fb0f47acbba3dc5fa228de975f5"
+  integrity sha512-P2SBLQ8Z0PVx71ngoXwo12+FiSfbNfGOClAao03/bant5DgLNkOPAck5IaJcEk4gKlQhDEURzfR3xuBG1/B+IA==
+  dependencies:
+    es6-promise "3.2.1"
+    mongodb-core "2.1.20"
+    readable-stream "2.2.7"
 
 monk-middleware-cast-ids@^0.2.1:
   version "0.2.1"
@@ -649,6 +708,11 @@ podium@3.x.x:
     hoek "6.x.x"
     joi "14.x.x"
 
+process-nextick-args@~1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
+  integrity sha1-FQ4gt1ZZCtP5EJPyWk8q2L/zC6M=
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -658,6 +722,19 @@ punycode@2.x.x:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+readable-stream@2.2.7:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.7.tgz#07057acbe2467b22042d36f98c5ad507054e95b1"
+  integrity sha1-BwV6y+JGeyIELTb5jFrVBwVOlbE=
+  dependencies:
+    buffer-shims "~1.0.0"
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "~1.0.0"
+    process-nextick-args "~1.0.6"
+    string_decoder "~1.0.0"
+    util-deprecate "~1.0.1"
 
 readable-stream@^2.3.5:
   version "2.3.7"
@@ -680,7 +757,7 @@ request@2.12.0:
     form-data "~0.0.3"
     mime "~1.2.7"
 
-require_optional@^1.0.1:
+require_optional@^1.0.1, require_optional@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require_optional/-/require_optional-1.0.1.tgz#4cf35a4247f64ca3df8c2ef208cc494b1ca8fc2e"
   integrity sha512-qhM/y57enGWHAe3v/NcwML6a3/vfESLe/sGM2dII+gEO0BpKRUkWZow/tyloNqJyN6kXSl3RyyM8Ll5D/sJP8g==
@@ -751,6 +828,13 @@ statehood@6.x.x:
     iron "5.x.x"
     joi "14.x.x"
 
+string_decoder@~1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab"
+  integrity sha512-4AH6Z5fzNNBcH+6XDMfA/BTt87skxqJlO0lAh3Dker5zThcAxG6mKz+iGu308UKoPPQ8Dcqx/4JhujzltRa+hQ==
+  dependencies:
+    safe-buffer "~5.1.0"
+
 string_decoder@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
@@ -781,6 +865,11 @@ topo@3.x.x:
   integrity sha512-IgpPtvD4kjrJ7CRA3ov2FhWQADwv+Tdqbsf1ZnPUSAtCJ9e1Z44MmoSGDXGk4IppoZA7jd/QRkNddlLJWlUZsQ==
   dependencies:
     hoek "6.x.x"
+
+underscore@^1.7.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.12.0.tgz#4814940551fc80587cef7840d1ebb0f16453be97"
+  integrity sha512-21rQzss/XPMjolTiIezSu3JAjgagXKROtNrYFEOWK109qY1Uv2tVjPTZ1ci2HgvQDA16gHYSthQIJfB+XId/rQ==
 
 util-deprecate@~1.0.1:
   version "1.0.2"

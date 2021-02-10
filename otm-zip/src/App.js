@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import Zip from './zipGet'
-import Home from './home'
+import ServerData from './serverData.js'
 import CreateYard from './createYard'
 
 
@@ -10,14 +10,14 @@ class App extends Component {
   return (
     <div className="App">
       <Router>
-        <nav>
-          <Link to="/" > Home </Link>
-          <Link to="/createyard">Create</Link>
-          <Link to="zip"> Zipcode </Link>
+        <nav className="home-nav">
+          <Link to="/serverdata" className="home-link"> ServerData </Link>
+          <Link to="/createyard" className="create-link">Create</Link>
+          <Link to="zip" className="zip-link"> Zipcode </Link>
         </nav>
 
         <div>
-        <Route exact path="/" component={Home}/> 
+        <Route exact path="/serverdata" component={ServerData}/> 
         <Route exact path="/zip" component={Zip}/> 
         <Route exact path="/createyard" component={CreateYard}/> 
         </div>
